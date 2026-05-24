@@ -405,7 +405,7 @@ function BookingScreen({ onBooked }) {
   const subtotal = worker ? worker.price * form.hours : 0;
   const fee = Math.round(subtotal * 0.1);
   const total = subtotal + fee;
-
+  const fee = 0;
   const stepLabels = ["Service", "Worker", "Details"];
 
   const handleConfirm = () => {
@@ -575,10 +575,6 @@ function BookingScreen({ onBooked }) {
               <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}>
                 <span style={{ fontSize: 13, color: C.slate }}>£{worker?.price}/hr × {form.hours}h</span>
                 <span style={{ fontFamily: FONT.mono, fontWeight: 600 }}>£{subtotal}</span>
-              </div>
-              <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 10 }}>
-                <span style={{ fontSize: 13, color: C.slate }}>Platform fee (10%)</span>
-                <span style={{ fontFamily: FONT.mono, fontWeight: 600 }}>£{fee}</span>
               </div>
               <div style={{ height: 1, background: C.border, marginBottom: 10 }} />
               <div style={{ display: "flex", justifyContent: "space-between" }}>
