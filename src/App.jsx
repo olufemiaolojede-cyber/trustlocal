@@ -403,11 +403,9 @@ function BookingScreen({ onBooked }) {
 
   const workers = service ? WORKERS.filter(w => w.service === service.id) : [];
   const subtotal = worker ? worker.price * form.hours : 0;
-  const fee = Math.round(subtotal * 0.1);
-  const total = subtotal + fee;
   const fee = 0;
+  const total = subtotal + fee;
   const stepLabels = ["Service", "Worker", "Details"];
-
   const handleConfirm = () => {
     setSubmitting(true);
     setTimeout(() => {
